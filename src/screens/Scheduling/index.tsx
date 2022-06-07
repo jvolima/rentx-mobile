@@ -5,6 +5,8 @@ import { BackButton } from '../../components/BackButton';
 
 import ArrowSvg from '../../assets/arrow.svg';
 
+import { useNavigation } from '@react-navigation/native';
+
 import {
   Container, 
   Header, 
@@ -21,6 +23,15 @@ import { Calendar } from '../../components/Calendar';
 
 export function Scheduling(){
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  function handleBackCarDetails() {
+    navigation.navigate('CarDetails');
+  }
+
+  function handleConfirmRental() {
+    navigation.navigate('SchedulingDetails');
+  }
 
   return(
     <Container>
@@ -31,7 +42,7 @@ export function Scheduling(){
       />
       <Header>
         <BackButton
-        onPress={() => {}} 
+          onPress={handleBackCarDetails} 
           color={theme.colors.background_secondary} 
         />
 
@@ -61,7 +72,7 @@ export function Scheduling(){
       </Content>
 
       <Footer>
-        <Button title='Confirmar' />
+        <Button title='Confirmar' onPress={handleConfirmRental} />
       </Footer>
     </Container>
   );

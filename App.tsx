@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import useCachedResources from './src/hooks/useCachedResources';
+import { Routes } from './src/routes';
 import { CarDetails } from './src/screens/CarDetails';
 
 import { Home } from './src/screens/Home';
@@ -18,7 +19,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <SchedulingComplete />
+      <Routes />
     </ThemeProvider>
   )
 }

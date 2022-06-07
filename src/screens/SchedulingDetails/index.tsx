@@ -6,6 +6,8 @@ import { ImageSlider } from '../../components/ImageSlider';
 
 import { Feather } from '@expo/vector-icons';
 
+import { useNavigation } from '@react-navigation/native';
+
 import SpeedSvg from '../../assets/speed.svg';
 import AccelerationSvg from '../../assets/acceleration.svg';
 import ForceSvg from '../../assets/force.svg';
@@ -44,6 +46,15 @@ import { useTheme } from 'styled-components';
 
 export function SchedulingDetails(){
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  function handleBackScheduling() {
+    navigation.navigate('CarDetails');
+  }
+
+  function handleConfirmRental() {
+    navigation.navigate('SchedulingComplete');
+  }
 
   return(
     <Container> 
@@ -53,7 +64,7 @@ export function SchedulingDetails(){
         translucent
       />
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={handleBackScheduling} />
       </Header>
 
       <CarImages>
@@ -120,7 +131,7 @@ export function SchedulingDetails(){
       </Content>
 
       <Footer>
-        <Button title='Alugar agora' color={theme.colors.success} />
+        <Button title='Alugar agora' color={theme.colors.success} onPress={handleConfirmRental} />
       </Footer>
     </Container>
   );
