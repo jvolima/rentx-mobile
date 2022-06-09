@@ -4,13 +4,22 @@ interface CarDetailsProps {
   car: CarDTO;
 }
 
+interface SchedulingProps {
+  car: CarDTO;
+}
+
+interface SchedulingDetails {
+  car: CarDTO;
+  dates: string[];
+}
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       Home: undefined;
       CarDetails: CarDetailsProps;
-      Scheduling: undefined;
-      SchedulingDetails: undefined;
+      Scheduling: SchedulingProps;
+      SchedulingDetails: SchedulingDetails;
       SchedulingComplete: undefined;
     }
   }

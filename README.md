@@ -13,6 +13,7 @@
 - Stack Navigator
 - Json-server
 - Axios
+- Date-fns
 
 ## Principais aprendizados
 - Utilizar calendários
