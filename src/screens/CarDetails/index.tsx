@@ -37,7 +37,7 @@ export function CarDetails(){
   const { car } = route.params as Params; 
 
   function handleBackHome() {
-    navigation.navigate('Home');
+    navigation.goBack();
   }
 
   function handleConfirmRental() {

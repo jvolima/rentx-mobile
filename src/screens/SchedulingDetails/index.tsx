@@ -49,7 +49,7 @@ export function SchedulingDetails(){
   const navigation = useNavigation();
 
   function handleBackScheduling() {
-    navigation.navigate('CarDetails');
+    navigation.goBack();
   }
 
   function handleConfirmRental() {

@@ -12,6 +12,7 @@
 - React-native-calendars
 - Stack Navigator
 - Json-server
+- Axios
 
 ## Principais aprendizados
 - Utilizar calendários
