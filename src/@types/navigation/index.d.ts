@@ -21,6 +21,7 @@ export declare global {
       Scheduling: SchedulingProps;
       SchedulingDetails: SchedulingDetails;
       SchedulingComplete: undefined;
+      MyCars: undefined;
     }
   }
 }
