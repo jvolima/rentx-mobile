@@ -89,8 +89,10 @@ export function SchedulingDetails(){
       id: car.id,
       unavailable_dates
     }).then(() => navigation.navigate('SchedulingComplete'))
-    .catch(() => Alert.alert('Não foi possível confirmar o agendamento.'))
-    .finally(() => setLoadingConfirmRental(false));
+    .catch(() => {
+      Alert.alert('Não foi possível confirmar o agendamento.');
+      setLoadingConfirmRental(false);
+    });
   }
 
   useEffect(() => {
@@ -182,6 +184,8 @@ export function SchedulingDetails(){
           title={loadingConfirmRental ? 'Carregando...' : 'Alugar agora'}
           color={theme.colors.success} 
           onPress={handleConfirmRental} 
+          loading={loadingConfirmRental}
+          disabled={loadingConfirmRental ? true : false}
         />
       </Footer>
     </Container>

@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 
 interface ContainerProps {
   color?: string;
+  enabled?: boolean;
 }
 
 export const Container = styled(TouchableOpacity)<ContainerProps>`
