@@ -20,6 +20,7 @@
 - Trabalhar com datas
 - Heurísticas de Nielsen e UX (User experience)
 - Consumir API
+- Animações
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/4ojyGi2mGuQaGK0sUHMAqB/RentX-Ignite?node-id=0%3A1) para acessar o layout no Figma
