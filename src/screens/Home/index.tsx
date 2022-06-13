@@ -11,7 +11,9 @@ import { useNavigation } from '@react-navigation/native';
 import Logo from '../../assets/logo.svg'
 import { Car } from '../../components/Car';
 
-import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+
+import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 
 import {
   CarList,
@@ -19,7 +21,6 @@ import {
   Header,
   HeaderContent,
   TotalCars,
-  MyCarsButton
 } from './styles'
 import { CarDTO } from '../../dtos/CarDTO';
 import { Load } from '../../components/Load';
@@ -40,6 +41,21 @@ export function Home(){
         { translateX: positionX.value },
         { translateY: positionY.value }
       ]
+    }
+  });
+
+  const onGestureEvent = useAnimatedGestureHandler({
+    onStart(_, ctx: any) {
+      ctx.positionX = positionX.value;
+      ctx.positionY = positionY.value;
+    },
+    onActive(event, ctx: any) {
+      positionX.value = ctx.positionX + event.translationX;
+      positionY.value = ctx.positionY + event.translationY;
+    },
+    onEnd() {
+      positionX.value = withSpring(0);
+      positionY.value = withSpring(0);
     }
   });
 
@@ -70,55 +86,59 @@ export function Home(){
   }, []);
 
   return(
-    <Container>
-      <StatusBar
-        barStyle='light-content'
-        backgroundColor='transparent' 
-        translucent
-      />
-      <Header>
-        <HeaderContent>
-          <Logo
-            width={RFValue(108)}
-            height={RFValue(12)}
-          />
-          <TotalCars>
-            Total de {cars.length} carros
-          </TotalCars>
-        </HeaderContent>
-      </Header>
-
-      {
-        isLoading ? <Load /> :
-        <CarList
-          data={cars}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Container>
+        <StatusBar
+          barStyle='light-content'
+          backgroundColor='transparent' 
+          translucent
         />
-      }
+        <Header>
+          <HeaderContent>
+            <Logo
+              width={RFValue(108)}
+              height={RFValue(12)}
+            />
+            <TotalCars>
+              Total de {cars.length} carros
+            </TotalCars>
+          </HeaderContent>
+        </Header>
 
-      <Animated.View
-        style={[
-          myCarsButtonStyle,
-          {
-            position: 'absolute',
-            bottom: 13,
-            right: 22
-          }
-        ]}
-      >
-        <ButtonAnimated 
-          onPress={handleOpenMyCars}
-          style={[styles.button, { backgroundColor: theme.colors.main }]}
-        >
-          <Ionicons 
-            name='ios-car-sport'
-            size={32}
-            color={theme.colors.background_secondary}
+        {
+          isLoading ? <Load /> :
+          <CarList
+            data={cars}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => <Car data={item} onPress={() => handleCarDetails(item)} />}
           />
-        </ButtonAnimated>
-      </Animated.View>      
-    </Container>
+        }
+
+        <PanGestureHandler onGestureEvent={onGestureEvent}>
+          <Animated.View
+            style={[
+              myCarsButtonStyle,
+              {
+                position: 'absolute',
+                bottom: 13,
+                right: 22
+              }
+            ]}
+          >
+            <ButtonAnimated 
+              onPress={handleOpenMyCars}
+              style={[styles.button, { backgroundColor: theme.colors.main }]}
+            >
+              <Ionicons 
+                name='ios-car-sport'
+                size={32}
+                color={theme.colors.background_secondary}
+              />
+            </ButtonAnimated>
+          </Animated.View>  
+        </PanGestureHandler>    
+      </Container>
+    </GestureHandlerRootView>
   );
 }
 
