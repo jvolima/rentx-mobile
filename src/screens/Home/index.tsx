@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
+import { BackHandler, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -85,6 +85,12 @@ export function Home(){
     fetchCars();
   }, []);
 
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      return true;
+    })
+  }, []);
+
   return(
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Container>
@@ -99,9 +105,12 @@ export function Home(){
               width={RFValue(108)}
               height={RFValue(12)}
             />
-            <TotalCars>
-              Total de {cars.length} carros
-            </TotalCars>
+            {
+              !isLoading &&
+              <TotalCars>
+                Total de {cars.length} carros
+              </TotalCars> 
+            }
           </HeaderContent>
         </Header>
 
