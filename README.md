@@ -3,6 +3,8 @@
 ## Funcionalidades da aplicação
 - Listagem de carros disponíveis para aluguel
 - Alugar carros
+- Listar agendamentos do usuário
+- Mostrar detalhes dos carros
 
 ## Tecnologias utilizadas
 - React Native
@@ -24,6 +26,7 @@
 - Animações
 - Transições (Bezier: https://cubic-bezier.com/#.17,.67,.83,.67)
 - Lidar com gestos do usuário
+- Splash screen animada
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/4ojyGi2mGuQaGK0sUHMAqB/RentX-Ignite?node-id=0%3A1) para acessar o layout no Figma
