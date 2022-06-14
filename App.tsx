@@ -2,13 +2,13 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import useCachedResources from './src/hooks/useCachedResources';
 import { Routes } from './src/routes';
-import { CarDetails } from './src/screens/CarDetails';
+import { LogBox } from 'react-native'
 
-import { Home } from './src/screens/Home';
-import { Scheduling } from './src/screens/Scheduling';
-import { SchedulingComplete } from './src/screens/SchedulingComplete';
-import { SchedulingDetails } from './src/screens/SchedulingDetails';
 import theme from './src/styles/theme';
+
+LogBox.ignoreLogs([
+  'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.'
+])
 
 export default function App() {
   const isLoadingComplete = useCachedResources();

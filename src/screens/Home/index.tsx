@@ -23,7 +23,7 @@ import {
   TotalCars,
 } from './styles'
 import { CarDTO } from '../../dtos/CarDTO';
-import { Load } from '../../components/Load';
+import { LoadAnimation } from '../../components/LoadAnimation';
 import { useTheme } from 'styled-components';
 
 const ButtonAnimated = Animated.createAnimatedComponent(TouchableOpacity)
@@ -115,7 +115,7 @@ export function Home(){
         </Header>
 
         {
-          isLoading ? <Load /> :
+          isLoading ? <LoadAnimation /> :
           <CarList
             data={cars}
             keyExtractor={item => item.id}
