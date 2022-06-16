@@ -7,6 +7,10 @@ interface ContainerProps {
   enabled?: boolean;
 }
 
+interface TitleProps {
+  light?: boolean;
+}
+
 export const Container = styled(TouchableOpacity)<ContainerProps>`
   width: 100%;
 
@@ -17,8 +21,8 @@ export const Container = styled(TouchableOpacity)<ContainerProps>`
   background-color: ${({ theme, color }) => color ? color : theme.colors.main};
 `;
 
-export const Title = styled.Text`
+export const Title = styled.Text<TitleProps>`
   font-family: ${({ theme }) => theme.fonts.primary_500};
   font-size: ${RFValue(15)}px;
-  color: ${({ theme }) => theme.colors.background_secondary};
+  color: ${({ theme, light }) => light ? theme.colors.title : theme.colors.background_secondary};
 `;
