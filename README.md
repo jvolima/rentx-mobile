@@ -1,5 +1,8 @@
 # Rentx (Aplicação mobile para aluguel de carros)
 
+## Capa
+<img src="./Capa.png" /> <br/> <br/>
+
 ## Funcionalidades da aplicação
 - Listagem de carros disponíveis para aluguel
 - Alugar carros
@@ -30,3 +33,32 @@
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/4ojyGi2mGuQaGK0sUHMAqB/RentX-Ignite?node-id=0%3A1) para acessar o layout no Figma
+
+## Como executar a aplicação 
+### Pré-requisitos
+* yarn
+```bash
+npm install --global yarn
+```
+* expo
+```bash
+npm install -g expo-cli
+```
+
+### Instalação
+1. Clone o repositório
+```bash
+git clone https://github.com/jvolima/rentx-mobile.git
+```
+2. Acesse a pasta do projeto
+```bash
+cd rentx-mobile
+```
+3. Instale as dependências necessárias 
+```bash
+yarn
+```
+4. Execute o projeto
+```bash
+expo start
+```
