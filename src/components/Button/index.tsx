@@ -1,16 +1,14 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { useTheme } from 'styled-components';
 
 import {
   Container, Title
 } from './styles'
 
-interface Props {
+interface Props extends TouchableOpacityProps {
   title: string;
-  onPress: () => void;
   color?: string;
-  disabled?: boolean;
   loading?: boolean;
   light?: boolean;
 }
@@ -19,9 +17,9 @@ export function Button({
   title, 
   color,
   onPress,
-  disabled = false,
   loading = false,
-  light = false
+  light = false,
+  disabled = true
 }: Props){
   const theme = useTheme();
 
