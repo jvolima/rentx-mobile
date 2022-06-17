@@ -17,7 +17,7 @@ export function StackRoutes() {
       screenOptions={{
         headerShown: false
       }}
-      initialRouteName='SignIn'
+      initialRouteName='Splash'
     >
       <Screen
         name='Splash'
