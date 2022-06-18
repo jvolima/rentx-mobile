@@ -7,7 +7,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "api": "npx json-server ./src/services/server.json --host 192.168.0.109 --port 3333 --delay 700"
+    "api": "npx json-server ./src/services/server.json --host 192.168.0.109 --port 3334 --delay 700"
   },
   "dependencies": {
     "@expo-google-fonts/archivo": "^0.2.2",

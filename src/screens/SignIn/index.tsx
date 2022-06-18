@@ -15,11 +15,14 @@ import {
   Form,
   Footer
 } from './styles'
+import { useNavigation } from '@react-navigation/native';
 
 export function SignIn(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const theme = useTheme();
+  const navigation = useNavigation();
 
   async function handleSignIn() {
     try {
@@ -38,6 +41,10 @@ export function SignIn(){
         Alert.alert('Erro na autenticação', 'Ocorreu um erro ao fazer login, verifique as credenciais');
       }
     }
+  }
+
+  function handleSignUp() {
+    navigation.navigate('SignUpFirstStep');
   }
 
   return(
@@ -88,7 +95,7 @@ export function SignIn(){
             
             <Button
               title='Criar conta gratuita'
-              onPress={() => {}}
+              onPress={handleSignUp}
               disabled={false}
               loading={false}
               color={theme.colors.background_secondary}

@@ -17,6 +17,7 @@ export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       SignIn: undefined;
+      SignUpFirstStep: undefined;
       Home: undefined;
       CarDetails: CarDetailsProps;
       Scheduling: SchedulingProps;
