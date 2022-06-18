@@ -18,6 +18,7 @@ export declare global {
     interface RootParamList {
       SignIn: undefined;
       SignUpFirstStep: undefined;
+      SignUpSecondStep: undefined;
       Home: undefined;
       CarDetails: CarDetailsProps;
       Scheduling: SchedulingProps;
