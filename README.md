@@ -20,6 +20,7 @@
 - Axios
 - Date-fns
 - React-native-reanimated
+- Yup
 
 ## Principais aprendizados
 - Utilizar calendários
@@ -31,6 +32,7 @@
 - Lidar com gestos do usuário
 - Splash screen animada
 - Acessibilidade em formulários
+- Validação de formulários com o Yup
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/e8Kkb8QImQV0Z0F8WXkgju/RentX-Ignite---Offline-First?node-id=0%3A1) para acessar o layout no Figma
