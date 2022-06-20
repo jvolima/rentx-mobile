@@ -13,12 +13,20 @@ interface SchedulingDetails {
   dates: string[];
 }
 
+interface SignUpSecondStepProps {
+  user: {
+    name: string;
+    email: string;
+    driverLicense: string;
+  }
+}
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
       SignIn: undefined;
       SignUpFirstStep: undefined;
-      SignUpSecondStep: undefined;
+      SignUpSecondStep: SignUpSecondStepProps;
       Home: undefined;
       CarDetails: CarDetailsProps;
       Scheduling: SchedulingProps;
