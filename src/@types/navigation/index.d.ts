@@ -21,6 +21,12 @@ interface SignUpSecondStepProps {
   }
 }
 
+interface ConfirmationProps {
+  title: string;
+  message: string;
+  nextScreenRoute: 'SignIn' | 'SignUpFirstStep' | 'SignUpSecondStep' | 'Home' | 'CarDetails' | 'Scheduling' | 'SchedulingDetails' | 'Confirmation' | 'MyCars'
+}
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
@@ -31,7 +37,7 @@ export declare global {
       CarDetails: CarDetailsProps;
       Scheduling: SchedulingProps;
       SchedulingDetails: SchedulingDetails;
-      SchedulingComplete: undefined;
+      Confirmation: ConfirmationProps;
       MyCars: undefined;
     }
   }
