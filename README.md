@@ -4,6 +4,7 @@
 <img src="./Capa.png" /> <br/> <br/>
 
 ## Funcionalidades da aplicação
+- Cadastro e Login no app
 - Listagem de carros disponíveis para aluguel
 - Alugar carros
 - Listar agendamentos do usuário
@@ -33,6 +34,7 @@
 - Splash screen animada
 - Acessibilidade em formulários
 - Validação de formulários com o Yup
+- Flexibilização de interfaces
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/e8Kkb8QImQV0Z0F8WXkgju/RentX-Ignite---Offline-First?node-id=0%3A1) para acessar o layout no Figma
