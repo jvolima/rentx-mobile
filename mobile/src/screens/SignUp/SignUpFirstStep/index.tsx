@@ -17,7 +17,6 @@ import {
   Form,
   FormTitle
 } from './styles'
-import { useAuth } from '../../../hooks/auth';
 
 export function SignUpFirstStep(){
   const [name, setName] = useState('');
