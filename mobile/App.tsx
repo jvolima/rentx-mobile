@@ -5,6 +5,7 @@ import { Routes } from './src/routes';
 import { LogBox } from 'react-native'
 
 import theme from './src/styles/theme';
+import { AppProvider } from './src/hooks';
 
 LogBox.ignoreLogs([
   'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.'
@@ -19,7 +20,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </ThemeProvider>
   )
 }
