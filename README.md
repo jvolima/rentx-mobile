@@ -16,7 +16,7 @@
 - Expo
 - Styled components
 - React-native-calendars
-- Stack Navigator
+- Stack Navigator e Tab Navigator
 - Json-server
 - Axios
 - Date-fns
@@ -35,6 +35,9 @@
 - Acessibilidade em formulários
 - Validação de formulários com o Yup
 - Flexibilização de interfaces
+- Autenticação
+- Rotas privadas e públicas
+- Utilizar tab e stack navigator em conjunto
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/e8Kkb8QImQV0Z0F8WXkgju/RentX-Ignite---Offline-First?node-id=0%3A1) para acessar o layout no Figma
