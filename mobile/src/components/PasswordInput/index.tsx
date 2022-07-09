@@ -11,7 +11,7 @@ import {
 
 interface Props extends TextInputProps {
   iconName: React.ComponentProps<typeof Feather>['name'];
-  value: string;
+  value?: string;
 }
 
 export function PasswordInput({ iconName, value, ...rest }: Props){
@@ -50,6 +50,7 @@ export function PasswordInput({ iconName, value, ...rest }: Props){
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         isFocused={isFocused}
+        autoCorrect={false}
       />
 
       <TouchableOpacity 
