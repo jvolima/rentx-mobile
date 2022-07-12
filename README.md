@@ -9,6 +9,7 @@
 - Alugar carros
 - Listar agendamentos do usuário
 - Mostrar detalhes dos carros
+- Alterar informações do usuário (Tela de perfil)
 
 ## Tecnologias utilizadas
 - React Native
@@ -40,6 +41,8 @@
 - Rotas privadas e públicas
 - Utilizar tab e stack navigator em conjunto
 - Offline first
+- Sincronizar alterações feitas offline e mandar para o backend
+- Utilizar imagens do dispositivo do usuário
 
 ## Design da aplicação
 - Clique [aqui](https://www.figma.com/file/e8Kkb8QImQV0Z0F8WXkgju/RentX-Ignite---Offline-First?node-id=0%3A1) para acessar o layout no Figma
