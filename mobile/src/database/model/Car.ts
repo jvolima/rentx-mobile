@@ -19,6 +19,9 @@ class Car extends Model {
   @field('price')
   price!: number;
 
+  @field('period')
+  period!: string;
+
   @field('thumbnail')
   thumbnail!: string;
 }

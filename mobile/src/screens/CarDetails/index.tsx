@@ -3,6 +3,7 @@ import { StatusBar, StyleSheet } from 'react-native';
 import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
+import { Car as ModelCar } from '../../database/model/Car';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 
